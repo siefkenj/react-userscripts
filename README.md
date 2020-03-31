@@ -6,7 +6,7 @@ This repository contains a stub project for developing userscript extensions wit
 included in a userscript.
 
 In Firefox or Chrome, install [Greasemonkey](https://addons.mozilla.org/en-CA/firefox/addon/greasemonkey/) or Tampermonkey.
-You can then test the userscript by installing it [here](https://github.com/siefkenj/crowdmark-addons/raw/master/dist/react-userscripts.user.js).
+You can then test the userscript by installing it [here](https://github.com/siefkenj/react-userscripts/raw/master/dist/react-userscripts.user.js).
 Navigate to [google](https://www.google.com) and you should see a react component inserted at the bottom of the page.
 
 # Development
@@ -30,7 +30,7 @@ developing a normal web application, not a userscript addon.)
 
 When developing, it's nice to be able to get the newest version of your script upon a page
 refresh. To do this, install the development version of `react-userscripts` script located
-`dist/react-userscripts-dev.user.js` or click [here](https://github.com/siefkenj/crowdmark-addons/raw/master/dist/react-userscripts-dev.user.js).
+`dist/react-userscripts-dev.user.js` or click [here](https://github.com/siefkenj/react-userscripts/raw/master/dist/react-userscripts-dev.user.js).
 The dev script will dynamically load the extension from port `8124`, so you can take advantage of
 `create-react-app`'s ability to auto-recompile an app when the source changes.
 
