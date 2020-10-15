@@ -14,7 +14,7 @@ Navigate to [google](https://www.google.com) and you should see a react componen
 ## Building
 
 To build `react-userscripts` you must have [Node.js](https://nodejs.org/en/download/) and [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
-Then,
+Then, from the `react-userscripts` directory, run
 
 ```
 cd userscript/
@@ -37,7 +37,7 @@ The dev script will dynamically load the extension from port `8124`, so you can 
 Now, run
 
 ```
-cd app/
+cd userscript/
 npm install    # if you haven't already
 npm start
 ```
