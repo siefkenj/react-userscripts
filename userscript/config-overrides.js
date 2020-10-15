@@ -74,5 +74,19 @@ module.exports = function override(config, env) {
         }
     });
 
+    // Make a globalThis shim to prevent webpack code from erroring when run in dev mode
+    config.output.globalObject = `(function() {
+        if (typeof globalThis === 'object') return globalThis;
+        Object.defineProperty(Object.prototype, '__magic__', {
+            get: function() {
+                return this;
+            },
+            configurable: true
+        });
+        __magic__.globalThis = __magic__; // lolwat
+        delete Object.prototype.__magic__;
+        return globalThis
+    }())`
+
     return config;
 };
