@@ -6,9 +6,9 @@ module.exports = function override(config, env) {
         runtimeChunk: false,
         splitChunks: {
             cacheGroups: {
-                default: false
-            }
-        }
+                default: false,
+            },
+        },
     });
 
     // prevent hashes for the JS files
@@ -23,7 +23,7 @@ module.exports = function override(config, env) {
         }
         if (plugin.constructor.name === "MiniCssExtractPlugin") {
             Object.assign(plugin.options, {
-                filename: "static/css/[name].css"
+                filename: "static/css/[name].css",
             });
             delete plugin.options.chunkFilename;
         }
@@ -46,26 +46,26 @@ module.exports = function override(config, env) {
     // disable hot module reloading because Greasemonkey cannot handle it
     // Delete any entries to the "HotDev" client
     config.entry = config.entry.filter(
-        x => !x.toLowerCase().includes("hotdev")
+        (x) => !x.toLowerCase().includes("hotdev")
     );
     config.plugins = config.plugins.filter(
-        x => !x || x.constructor.name !== "HotModuleReplacementPlugin"
+        (x) => !x || x.constructor.name !== "HotModuleReplacementPlugin"
     );
 
     // Even in production mode, we want the CSS inlined instead of put in a different file
     // Remove the CSS extract plugin because we want CSS injected directly in
     // the greasemonkey script
     config.plugins = config.plugins.filter(
-        x => !x || x.constructor.name !== "MiniCssExtractPlugin"
+        (x) => !x || x.constructor.name !== "MiniCssExtractPlugin"
     );
-    (config.module.rules.find(x => !!x.oneOf).oneOf || []).forEach(x => {
+    (config.module.rules.find((x) => !!x.oneOf).oneOf || []).forEach((x) => {
         if (
             x.test &&
             x.test.constructor === RegExp &&
             "test.css".match(x.test)
         ) {
             try {
-                x.use = x.use.filter(y => !y.loader.includes("css-extract"));
+                x.use = x.use.filter((y) => !y.loader.includes("css-extract"));
                 x.use.unshift(require.resolve("style-loader"));
             } catch (e) {
                 // If we fail to replace a `css-extract` move on silently
@@ -86,7 +86,7 @@ module.exports = function override(config, env) {
         __magic__.globalThis = __magic__; // lolwat
         delete Object.prototype.__magic__;
         return globalThis
-    }())`
+    }())`;
 
     return config;
 };
