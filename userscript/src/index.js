@@ -12,7 +12,7 @@ log("React script has successfully started");
 async function main() {
     // Find <body/>. This can be any element. We wait until
     // the page has loaded enough for that element to exist.
-    const body = await awaitElement("#viewport");
+    const body = await awaitElement("body > div");
     const container = document.createElement("div");
     body.appendChild(container);
     ReactDOM.render(<App />, container);
