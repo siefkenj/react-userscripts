@@ -10,7 +10,7 @@
     },
     "scripts": {
         "start": "cross-env PORT=8124 BROWSER=none FAST_REFRESH=false WDS_SOCKET_HOST=localhost react-app-rewired start",
-        "finalize": "mkdir -p ../dist && cp src/userscript-header.js ../dist/react-userscripts.user.js && cat build/static/js/main.js >> ../dist/react-userscripts.user.js",
+        "finalize": "shx mkdir -p ../dist && shx cp src/userscript-header.js ../dist/react-userscripts.user.js && shx cat build/static/js/main.js >> ../dist/react-userscripts.user.js",
         "build": "react-app-rewired build && npm run finalize",
         "debug-build": "react-app-rewired --inspect-brk=5858 build && npm run finalize",
         "test": "react-app-rewired test",
@@ -32,6 +32,7 @@
         ]
     },
     "devDependencies": {
-        "cross-env": "^7.0.3"
+        "cross-env": "^7.0.3",
+        "shx": "^0.3.4"
     }
 }
