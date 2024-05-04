@@ -32,7 +32,7 @@ When developing, it's nice to be able to get the newest version of your script u
 refresh. To do this, install the development version of `react-userscripts` script located
 `dist/react-userscripts-dev.user.js` or click [here](https://github.com/siefkenj/react-userscripts/raw/master/dist/react-userscripts-dev.user.js).
 The dev script will dynamically load the extension from port `8124`, so you can take advantage of
-`create-react-app`'s ability to auto-recompile an app when the source changes.
+auto-recompilation when source files change.
 
 Now, run
 

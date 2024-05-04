@@ -2,36 +2,19 @@
     "name": "react-userscripts",
     "version": "1.1.0",
     "private": true,
+    "type": "module",
     "dependencies": {
-        "react": "^17.0.2",
-        "react-app-rewired": "^2.1.8",
-        "react-dom": "^17.0.2",
-        "react-scripts": "^5.0.1"
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "vite": "^5.2.11"
     },
     "scripts": {
-        "start": "cross-env PORT=8124 BROWSER=none FAST_REFRESH=false WDS_SOCKET_HOST=localhost react-app-rewired start",
-        "finalize": "mkdir -p ../dist && cp src/userscript-header.js ../dist/react-userscripts.user.js && cat build/static/js/main.js >> ../dist/react-userscripts.user.js",
-        "build": "react-app-rewired build && npm run finalize",
-        "debug-build": "react-app-rewired --inspect-brk=5858 build && npm run finalize",
-        "test": "react-app-rewired test",
-        "eject": "react-app-rewired eject"
-    },
-    "eslintConfig": {
-        "extends": "react-app"
-    },
-    "browserslist": {
-        "production": [
-            ">0.2%",
-            "not dead",
-            "not op_mini all"
-        ],
-        "development": [
-            "last 1 chrome version",
-            "last 1 firefox version",
-            "last 1 safari version"
-        ]
+        "start": "npm-run-all --parallel build:watch preview",
+        "preview": "vite preview",
+        "build:watch": "vite build --watch",
+        "build": "vite build"
     },
     "devDependencies": {
-        "cross-env": "^7.0.3"
+        "npm-run-all": "^4.1.5"
     }
 }
