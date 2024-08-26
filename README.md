@@ -1,10 +1,6 @@
 # react-userscripts
 Develop a Greasemonkey/Tampermonkey script using React
 
-This repository contains a stub project for developing userscript extensions with react. It uses
-`react-app-rewired` to change the webpack configuration to compile React code so that it can be
-included in a userscript.
-
 In Firefox or Chrome, install [Greasemonkey](https://addons.mozilla.org/en-CA/firefox/addon/greasemonkey/) or Tampermonkey.
 You can then test the userscript by installing it [here](https://github.com/siefkenj/react-userscripts/raw/master/dist/react-userscripts.user.js).
 Navigate to [google](https://www.google.com) and you should see a react component inserted at the bottom of the page.
