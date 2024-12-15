@@ -6,7 +6,7 @@
     "dependencies": {
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
-        "vite": "^5.2.11"
+        "vite": "^5.2.14"
     },
     "scripts": {
         "start": "npm-run-all --parallel build:watch preview",
